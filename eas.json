@@ -27,5 +27,8 @@
   },
   "submit": {
     "production": {}
+  },
+  "update": {
+    "url": "https://u.expo.dev/d114bda8-a08d-4650-9113-188953acb5ac"
   }
 }

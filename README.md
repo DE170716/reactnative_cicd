@@ -20,13 +20,25 @@ This project is configured with EAS (Expo Application Services) for continuous i
 
 2. **Deploy Updates** (`.eas/workflows/deploy-updates.yml`)
    - Deploys updates to existing builds
-   - Can be triggered automatically on push to main branch
+   - **Tự động trigger khi push code lên branch `main`**
+   - Có thể trigger thủ công từ Dashboard
+
+3. **Auto Build on Tag** (`.eas/workflows/auto-build-on-tag.yml`)
+   - Tự động build production khi push tag mới (ví dụ: `v1.0.0`)
+   - Có thể trigger thủ công từ Dashboard
 
 ### How to Use
 
 1. **Manual Build**: Go to Expo Dashboard → Workflows → "Create Production Builds" → Run
-2. **Automatic Updates**: Push to main branch to trigger automatic updates
-3. **Local Development**: Use `npx expo start` for local development
+2. **Automatic Updates**: Push code lên branch `main` → Tự động deploy updates
+3. **Release Build**: Push tag mới (ví dụ: `git tag v1.0.0 && git push origin v1.0.0`) → Tự động build production
+4. **Local Development**: Use `npx expo start` for local development
+
+### Cách hoạt động của Auto Update
+
+- Khi bạn push code lên branch `main`, workflow "Deploy Updates" sẽ tự động chạy
+- EAS sẽ tạo một update và deploy lên các app đã được build trước đó
+- Users sẽ nhận được update mà không cần download app mới từ store
 
 ## Get started
 
