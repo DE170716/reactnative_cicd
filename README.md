@@ -1,6 +1,32 @@
-# Welcome to your Expo app 👋
+# EduBus - Expo App 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+## CI/CD Setup
+
+This project is configured with EAS (Expo Application Services) for continuous integration and deployment.
+
+### Build Profiles
+
+- **development**: For development builds with development client
+- **preview**: For internal testing builds (APK for Android)
+- **production**: For production builds
+
+### Workflows
+
+1. **Create Production Builds** (`.eas/workflows/create-production-builds.yml`)
+   - Builds production versions for both Android and iOS
+   - Trigger manually from Expo Dashboard
+
+2. **Deploy Updates** (`.eas/workflows/deploy-updates.yml`)
+   - Deploys updates to existing builds
+   - Can be triggered automatically on push to main branch
+
+### How to Use
+
+1. **Manual Build**: Go to Expo Dashboard → Workflows → "Create Production Builds" → Run
+2. **Automatic Updates**: Push to main branch to trigger automatic updates
+3. **Local Development**: Use `npx expo start` for local development
 
 ## Get started
 

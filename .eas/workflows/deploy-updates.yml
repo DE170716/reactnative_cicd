@@ -1,0 +1,8 @@
+name: Deploy Updates
+
+jobs:
+  deploy_updates:
+    type: update
+    params:
+      branch: main
+      message: "Auto-deploy from CI/CD"
